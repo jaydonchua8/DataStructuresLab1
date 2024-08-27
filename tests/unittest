@@ -1,0 +1,41 @@
+import unittest
+
+class TestFunctions(unittest.TestCase):
+    def test_reverse_and_uppercase(self):
+        self.assertEqual(reverse_and_uppercase("hello"), "OLLEH")
+        self.assertEqual(reverse_and_uppercase("DataStructures"), "SERUTCURTSATAD")
+        self.assertEqual(reverse_and_uppercase("Python"), "NOHTYP")
+
+    def test_basic_operations(self):
+        self.assertEqual(basic_operations(10, 2), (12, 8, 20, 5))
+        self.assertEqual(basic_operations(15, 3), (18, 12, 45, 5))
+        self.assertEqual(basic_operations(7, 7), (14, 0, 49, 1))
+
+    def test_check_sign(self):
+        self.assertEqual(check_sign(5), "Positive")
+        self.assertEqual(check_sign(-3), "Negative")
+        self.assertEqual(check_sign(0), "Zero")
+        self.assertEqual(check_sign(-0.001), "Negative")
+
+    def test_sum_of_evens(self):
+        self.assertEqual(sum_of_evens([1, 2, 3, 4, 5, 6]), 12)
+        self.assertEqual(sum_of_evens([7, 8, 9, 10]), 18)
+        self.assertEqual(sum_of_evens([11, 13, 15]), 0)
+        self.assertEqual(sum_of_evens([-2, -4, 6, 8]), 8)
+
+    def test_fibonacci(self):
+        self.assertEqual(fibonacci(5), 5)
+        self.assertEqual(fibonacci(10), 55)
+        self.assertEqual(fibonacci(1), 1)
+        self.assertEqual(fibonacci(0), 0)
+        self.assertEqual(fibonacci(8), 21)
+
+    def test_parse_and_calculate(self):
+        self.assertEqual(parse_and_calculate("3+5*2-4/2"), 10)
+        self.assertEqual(parse_and_calculate("10-3*2+8/4"), 6)
+        self.assertEqual(parse_and_calculate("2+3*4"), 14)
+        self.assertEqual(parse_and_calculate("10/2+3*4-5"), 15)
+
+# This allows the tests to run when this script is executed directly.
+if __name__ == '__main__':
+    unittest.main()
